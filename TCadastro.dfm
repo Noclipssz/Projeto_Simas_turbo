@@ -10,10 +10,12 @@ object Form2: TForm2
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Position = poScreenCenter
+  PixelsPerInch = 96
   TextHeight = 15
   object Label1: TLabel
     Left = 76
-    Top = 61
+    Top = 66
     Width = 24
     Height = 15
     Caption = 'CPF:'
@@ -39,9 +41,16 @@ object Form2: TForm2
     Height = 15
     Caption = 'Senha:'
   end
+  object Label5: TLabel
+    Left = 8
+    Top = 37
+    Width = 95
+    Height = 15
+    Caption = 'Nome de Usu'#225'rio:'
+  end
   object EdCPF: TEdit
     Left = 106
-    Top = 58
+    Top = 63
     Width = 121
     Height = 23
     TabOrder = 0
@@ -75,5 +84,12 @@ object Form2: TForm2
     Caption = 'Cadastrar'
     TabOrder = 4
     OnClick = BtCadastrarClick
+  end
+  object EdName: TEdit
+    Left = 106
+    Top = 34
+    Width = 121
+    Height = 23
+    TabOrder = 5
   end
 end

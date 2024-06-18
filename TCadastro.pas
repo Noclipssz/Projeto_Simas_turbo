@@ -8,7 +8,7 @@ uses
 
 type Cadastro = record
 	cpf,senha,cSenha:integer;
-	email:string[200];
+	email,nome:string[200];
 end;
 
   TForm2 = class(TForm)
@@ -21,6 +21,8 @@ end;
 		Label4: TLabel;
     EdCPF: TEdit;
     BtCadastrar: TButton;
+    Label5: TLabel;
+    EdName: TEdit;
     procedure BtCadastrarClick(Sender: TObject);
 
 
@@ -41,11 +43,12 @@ implementation
 { TForm2 }
 procedure TForm2.BtCadastrarClick(Sender: TObject);
 var
-	NovoCadastro: Cadastro;
+	NovoCadastro:Cadastro;
 	i:integer;
 begin
 //Recebe os dados informados no cadastro
 	NovoCadastro.cpf := StrToIntDef (EdCPF.Text, 0);
+  NovoCadastro.nome := EdName.text;
 	NovoCadastro.email := EdEmail.text;
 	NovoCadastro.senha := StrToIntDef (EdSenha.Text, 0);
 	NovoCadastro.cSenha := StrToIntDef (EdCSenha.Text, 0);
@@ -64,6 +67,13 @@ begin
 
 // Mensagem de confirmação
 	ShowMessage('Cadastro Realizado!');
+
+// Limpa os campos digitados
+EdEmail.Clear;
+EdSenha.Clear;
+EdCSenha.Clear;
+EdCPF.Clear;
+EdName.Clear;
 end;
 
 end.
